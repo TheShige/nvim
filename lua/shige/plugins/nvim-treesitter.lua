@@ -11,6 +11,8 @@ return {
                 "c_sharp",
                 "cpp",
                 "go",
+                "javascript",
+                "typescript",
             },
             sync_install = false,
             highlight = {
