@@ -58,8 +58,7 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ['<C-b>'] = cmp.mapping.scroll_docs(-4),
                 ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                ['<C-e>'] = cmp.mapping.abort(),
-                ['<Esc>'] = cmp.mapping.close(),
+                ['<C-q>'] = cmp.mapping.abort(),
                 ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
                 ["<Tab>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
@@ -83,6 +82,14 @@ return {
                         fallback()
                     end
                 end, { "i", "s" }),
+                ['<Down>'] = cmp.mapping(function(fallback)
+                    cmp.close()
+                    fallback()
+                    end, { "i" }),
+                ['<Up>'] = cmp.mapping(function(fallback)
+                    cmp.close()
+                    fallback()
+                    end, { "i" }),
             }),
             formatting = {
                 format = function(entry, vim_item)

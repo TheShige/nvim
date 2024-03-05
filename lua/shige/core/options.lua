@@ -24,6 +24,7 @@ local options = {
     mouse = "a",
     completeopt = {"menuone", "noselect"},
     termguicolors = true,
+    laststatus = 3,
 }
 
 for k, v in pairs(options) do

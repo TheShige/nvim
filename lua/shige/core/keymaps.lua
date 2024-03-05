@@ -11,11 +11,18 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Normal Mode --
--- Opening file explorer with Space + E
-kmap("n", "<leader>e", ":Lex 20<CR><CR>", opts)
-
+-- 
 -- Opening Lazy Git
-kmap("n", "<leader>gg", ":LazyGit<CR>", opts)
+kmap("n", "<leader>g", ":LazyGit<CR>", opts)
+
+-- Open Nvim-tree with Space + F
+kmap("n", "<leader>f", ":NvimTreeToggle<CR>", opts)
+
+-- Better navigation through buffers
+kmap("n", "<Tab>", ":bnext<CR>", opts)
+kmap("n", "<S-Tab>", ":bprevious<CR>", opts)
+kmap("n", "<leader>d", ":Bdelete<CR>", opts)
+kmap("n", "<leader>dd", ":bdelete<CR>", opts)
 
 -- Better window navigation
 kmap("n", "<C-m>", "<C-w>h", opts)
@@ -30,7 +37,6 @@ kmap("n", "<C-Left>", ":vertical resize +2<cr>", opts)
 kmap("n", "<C-Right>", ":vertical resize -2<cr>", opts)
 
 -- Insert mode --
-kmap("i", "<Down><Up>", "<ESC>", opts)
 
 -- Visual mode --
 -- Stay in indent mode
@@ -47,4 +53,4 @@ kmap("x", "<A-Down>", ":move '>+1<CR>gv-gv", opts)
 kmap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal mode --
-kmap("t", "<Down><Up>", "<C-\\><C-n>", opts)
+kmap("t", "<C-Esc>", "<C-\\><C-n>", opts)

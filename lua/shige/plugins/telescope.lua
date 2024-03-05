@@ -28,9 +28,9 @@ return {
         local keymap = vim.keymap
         local builtin = require("telescope.builtin")
 
-        keymap.set("n", "<leader>ff", builtin.find_files, {})
-        keymap.set("n", "<leader>fr", builtin.oldfiles, {})
-        keymap.set("n", "<leader>fs", builtin.live_grep, {})
-        keymap.set("n", "<leader>fc", builtin.grep_string, {})
-    end,
+        keymap.set("n", "<leader>tf", builtin.find_files, {})
+        keymap.set("n", "<leader>tr", builtin.oldfiles, {})
+        keymap.set("n", "<leader>ts", builtin.live_grep, {})
+        keymap.set("n", "<leader>tc", builtin.grep_string, {})
+    end
 }
