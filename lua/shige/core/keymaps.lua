@@ -21,8 +21,9 @@ kmap("n", "<leader>f", ":NvimTreeToggle<CR>", opts)
 -- Better navigation through buffers
 kmap("n", "<Tab>", ":bnext<CR>", opts)
 kmap("n", "<S-Tab>", ":bprevious<CR>", opts)
-kmap("n", "<leader>d", ":Bdelete<CR>", opts)
-kmap("n", "<leader>dd", ":bdelete<CR>", opts)
+kmap("n", "<leader>dd", ":Bdelete<CR>", opts)
+kmap("n", "<leader>dw", "<C-w>q", opts)
+kmap("n", "<leader>da", ":bdelete<CR>", opts)
 
 -- Better window navigation
 kmap("n", "<C-m>", "<C-w>h", opts)
@@ -53,4 +54,4 @@ kmap("x", "<A-Down>", ":move '>+1<CR>gv-gv", opts)
 kmap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal mode --
-kmap("t", "<C-Esc>", "<C-\\><C-n>", opts)
+kmap("t", "<C-q>", "<C-\\><C-n>", opts)

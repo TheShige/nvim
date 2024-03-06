@@ -4,7 +4,8 @@ return {
         "nvim-tree/nvim-web-devicons",
     },
     config = function ()
-    local function my_on_attach(bufnr)
+
+        local function my_on_attach(bufnr)
             local api = require "nvim-tree.api"
 
             local function opts(desc)
@@ -21,6 +22,9 @@ return {
 
         require("nvim-tree").setup({
             on_attach = my_on_attach,
+            view = {
+                preserve_window_proportions = true,
+            }
         })
     end,
 
