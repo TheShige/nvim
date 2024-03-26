@@ -2,7 +2,6 @@
 local options = {
     number = true,
     relativenumber = true,
-    clipboard = "unnamedplus",
     cmdheight = 0,
     cursorline = true,
     tabstop = 4,
@@ -22,7 +21,7 @@ local options = {
     splitbelow = true,
     splitright = true,
     mouse = "a",
-    completeopt = {"menuone", "noselect"},
+    completeopt = { "menuone", "noselect" },
     termguicolors = true,
     laststatus = 3,
 }
@@ -30,3 +29,12 @@ local options = {
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
+
+vim.api.nvim_create_autocmd("BufReadPost", {
+    callback = function()
+        local mark = vim.api.nvim_buf_get_mark(0, '"')
+        if mark[1] > 1 and mark[1] <= vim.api.nvim_buf_line_count(0) then
+            vim.api.nvim_win_set_cursor(0, mark)
+        end
+    end,
+})

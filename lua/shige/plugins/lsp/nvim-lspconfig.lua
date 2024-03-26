@@ -4,7 +4,6 @@ return {
         "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
-
         local lspconfig = require('lspconfig')
         local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
@@ -17,6 +16,7 @@ return {
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
             vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
             vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+            vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts)
             --vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
             --vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
             --vim.keymap.set('n', '<space>wl', function()
@@ -37,7 +37,6 @@ return {
             vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
             client.server_capabilities.signatureHelpProvider = false
-
         end
 
         local signs = {
@@ -83,7 +82,7 @@ return {
         lspconfig["gopls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
-            cmd = {"gopls"},
+            cmd = { "gopls" },
             filetypes = { "go", "gomod", "gowork", "gotmpl" },
             root_dir = require "lspconfig/util".root_pattern("go.work", "go.mod", ".git"),
             settings = {

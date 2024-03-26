@@ -16,7 +16,10 @@ vim.g.maplocalleader = " "
 kmap("n", "<leader>g", ":LazyGit<CR>", opts)
 
 -- Open Nvim-tree with Space + F
-kmap("n", "<leader>f", ":NvimTreeToggle<CR>", opts)
+kmap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+-- Save file with Leader + w
+kmap("n", "<leader>s", ":w<CR>", opts)
 
 -- Better navigation through buffers
 kmap("n", "<Tab>", ":bnext<CR>", opts)
@@ -54,4 +57,4 @@ kmap("x", "<A-Down>", ":move '>+1<CR>gv-gv", opts)
 kmap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal mode --
-kmap("t", "<C-q>", "<C-\\><C-n>", opts)
+kmap("t", "<C-Esc>", "<C-\\><C-n>", opts)
